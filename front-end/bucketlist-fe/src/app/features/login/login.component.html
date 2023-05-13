@@ -1,1 +1,14 @@
-<p>login works!</p>
+<h2>Log In</h2>
+<form (submit)="checkCredentials()">
+    <label for="username">Username</label>
+    <input id = "username" name = "username" [(ngModel)]="username">
+    <br><br>
+    <label for="password">Password</label>
+    <input id = "password" name = "password" [(ngModel)]="password">
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<div id="dialog-box" class="hidden">
+    <p>Incorrect username or password. Please try again.</p>
+</div>
