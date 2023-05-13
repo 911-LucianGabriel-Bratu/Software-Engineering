@@ -6,12 +6,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "User")
+@Table(name = "users", schema = "public")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,6 +26,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "is_admin")
-    private boolean is_admin;
+    @Column(name = "admin")
+    private boolean admin;
+
+    @OneToMany(mappedBy = "user")
+    private List<BooksDestination> booksDestinations = new ArrayList<>();
 }

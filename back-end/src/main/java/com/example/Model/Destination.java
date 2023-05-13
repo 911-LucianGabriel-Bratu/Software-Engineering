@@ -1,19 +1,20 @@
 package com.example.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "Destination")
+@Table(name = "destinations", schema = "public")
 public class Destination {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,9 +32,6 @@ public class Destination {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "fromDate")
-    private LocalDate fromDate;
-
-    @Column(name = "toDate")
-    private LocalDate toDate;
+    @OneToMany(mappedBy = "destination")
+    private List<BooksDestination> booksDestinations = new ArrayList<>();
 }
