@@ -1,0 +1,26 @@
+<h2>Destination</h2>
+<br>
+<ng-container *ngIf="destination">
+    <table class="elTable">
+    <thead>
+        <tr>
+        <th class="headerText">#</th>
+        <th class="headerText">Geolocation</th>
+        <th class="headerText">Title</th>
+        <th class="headerText">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td class="cellText">{{ destination['destinationID'] }}</td>
+        <td class="cellText">{{ destination['geolocation'] }}</td>
+        <td class="cellText">{{ destination['title'] }}</td>
+        <td class="cellText">{{ destination['description'] }}</td>
+        </tr>
+    </tbody>
+    </table>
+    <img alt="item" [src]="imageURL">
+    <br>
+    <button (click)="goBack()">Back</button>
+</ng-container>
+

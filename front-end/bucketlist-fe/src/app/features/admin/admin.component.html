@@ -1,1 +1,24 @@
-<p>admin works!</p>
+<h1>Admin page</h1>
+<ng-container *ngIf="destinations">
+<button (click)="goToAdd()">Add a new destination</button>
+<button (click)="logout()">Logout</button>
+<br><br>
+<table class="elTable">
+<thead>
+    <tr>
+    <th class="headerText">#</th>
+    <th class="headerText">Geolocation</th>
+    <th class="headerText">Title</th>
+    <th class="headerText">Description</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let destination of destinations; let i = index">
+    <td class="cellText"><a (click)="goToGetOne(destination.destinationID)">{{ i+1 }}</a></td>
+    <td class="cellText">{{ destination['geolocation'] }}</td>
+    <td class="cellText">{{ destination['title'] }}</td>
+    <td class="cellText">{{ destination['description'] }}</td>
+    </tr>
+</tbody>
+</table>
+</ng-container>

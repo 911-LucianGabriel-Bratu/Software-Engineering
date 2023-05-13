@@ -8,13 +8,17 @@ import { AdminComponent } from './features/admin/admin.component';
 import { UserComponent } from './features/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { OnedestinationComponent } from './features/admin/getOneDestination/onedestination/onedestination.component';
+import { AddDestinationComponent } from './features/admin/addDestination/add-destination/add-destination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    OnedestinationComponent,
+    AddDestinationComponent
   ],
   imports: [
     BrowserModule,
