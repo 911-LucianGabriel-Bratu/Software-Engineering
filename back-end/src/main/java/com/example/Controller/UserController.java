@@ -1,5 +1,6 @@
 package com.example.Controller;
 
+import com.example.Model.DTOs.UserDTO;
 import com.example.Model.User;
 import com.example.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,16 @@ public class UserController {
     @GetMapping("/users/{userID}")
     public User one(@PathVariable("userID") Long userID){
         return this.userService.one(userID);
+    }
+
+    @GetMapping("/users/dto")
+    public List<UserDTO> fetchAllUsersDTO(){
+        return this.userService.fetchAllUsersDTO();
+    }
+
+    @GetMapping("/users/dto/{userID}")
+    public UserDTO oneDTO(@PathVariable("userID") Long userID){
+        return this.userService.oneDTO(userID);
     }
 
     @PostMapping("/users")

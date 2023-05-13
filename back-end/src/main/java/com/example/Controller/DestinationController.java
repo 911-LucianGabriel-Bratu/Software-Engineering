@@ -1,5 +1,6 @@
 package com.example.Controller;
 
+import com.example.Model.DTOs.DestinationDTO;
 import com.example.Model.Destination;
 import com.example.Service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,16 @@ public class DestinationController {
     @GetMapping("/destinations/{destinationID}")
     public Destination one(@PathVariable("destinationID") Long destinationID){
         return this.destinationService.one(destinationID);
+    }
+
+    @GetMapping("/destinations/dto")
+    public List<DestinationDTO> fetchAllDestinationsDTO(){
+        return this.destinationService.fetchAllDestinationsDTO();
+    }
+
+    @GetMapping("/destinations/dto/{destinationID}")
+    public DestinationDTO oneDTO(@PathVariable("destinationID") Long destinationID){
+        return this.destinationService.oneDTO(destinationID);
     }
 
     @PostMapping("/destinations")
