@@ -65,8 +65,8 @@ public class UserService implements IUserService{
     }
 
     @Override
-    public List<BooksDestinationDTO> getPrivateList(Long UserID) {
-        User u = this.userRepo.findById(UserID).get();
+    public List<BooksDestinationDTO> getPrivateList(Long userID) {
+        User u = this.userRepo.findById(userID).get();
 
         List<BooksDestinationDTO> privateListDTO = new ArrayList<>();
         List<BooksDestination> privateList = u.getBooksDestinations();
@@ -89,4 +89,13 @@ public class UserService implements IUserService{
 
         return privateListDTO;
     }
+
+    @Override
+    public User updateUser(Long userID, User u) {
+        User u2 = this.userRepo.findById(userID).get();
+        u2.setUsername(u.getUsername());
+        u2.setPassword(u.getPassword());
+        return this.userRepo.save(u2);
+    }
+
 }

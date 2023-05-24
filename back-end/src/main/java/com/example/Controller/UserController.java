@@ -49,4 +49,8 @@ public class UserController {
 
     @GetMapping("/users/{userID}/privateList")
     public List<BooksDestinationDTO> getPrivateList(@PathVariable("userID") Long userID) {return this.userService.getPrivateList(userID);}
+
+    @GetMapping("/users/{userID}/update")
+    public User updateUser(@PathVariable("userID") Long userID, @RequestBody User user) {return this.updateUser(userID, user);}
+    
 }

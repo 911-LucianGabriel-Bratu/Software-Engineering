@@ -20,5 +20,8 @@ public interface IUserService {
 
     void deleteUser(Long userID);
 
-    List<BooksDestinationDTO> getPrivateList(Long UserID);
+    List<BooksDestinationDTO> getPrivateList(Long userID);
+
+    User updateUser(Long userID, User u);
+
 }
