@@ -1,6 +1,9 @@
 package com.example.Controller;
 
+import com.example.Model.BooksDestination;
+import com.example.Model.DTOs.BooksDestinationDTO;
 import com.example.Model.DTOs.UserDTO;
+import com.example.Model.Destination;
 import com.example.Model.User;
 import com.example.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,4 +47,6 @@ public class UserController {
         this.userService.deleteUser(userID);
     }
 
+    @GetMapping("/users/{userID}/privateList")
+    public List<BooksDestinationDTO> getPrivateList(@PathVariable("userID") Long userID) {return this.userService.getPrivateList(userID);}
 }

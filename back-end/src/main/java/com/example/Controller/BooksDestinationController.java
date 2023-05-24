@@ -45,4 +45,6 @@ public class BooksDestinationController {
     public void deleteBookedDestination(@PathVariable("bookedID") Long bookedID){
         this.booksDestinationService.deleteBooksDestination(bookedID);
     }
+
+    
 }

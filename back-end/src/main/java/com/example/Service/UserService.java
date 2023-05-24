@@ -1,6 +1,9 @@
 package com.example.Service;
 
+import com.example.Model.BooksDestination;
+import com.example.Model.DTOs.BooksDestinationDTO;
 import com.example.Model.DTOs.UserDTO;
+import com.example.Model.Destination;
 import com.example.Model.User;
 import com.example.Repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +62,31 @@ public class UserService implements IUserService{
     @Override
     public void deleteUser(Long userID) {
         this.userRepo.deleteById(userID);
+    }
+
+    @Override
+    public List<BooksDestinationDTO> getPrivateList(Long UserID) {
+        User u = this.userRepo.findById(UserID).get();
+
+        List<BooksDestinationDTO> privateListDTO = new ArrayList<>();
+        List<BooksDestination> privateList = u.getBooksDestinations();
+
+        for(BooksDestination b: privateList){
+            Destination d = b.getDestination();
+            BooksDestinationDTO dto = new BooksDestinationDTO();
+
+            dto.setDescription(d.getDescription());
+            dto.setTitle(d.getTitle());
+            dto.setImage(d.getImage());
+            dto.setGeolocation(d.getGeolocation());
+            dto.setDestinationID(d.getDestinationID());
+
+            dto.setFromDate(b.getFromDate());
+            dto.setToDate(b.getToDate());
+
+            privateListDTO.add(dto);
+        }
+
+        return privateListDTO;
     }
 }

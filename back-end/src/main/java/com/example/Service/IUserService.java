@@ -1,7 +1,9 @@
 package com.example.Service;
 
+import com.example.Model.BooksDestination;
 import com.example.Model.DTOs.UserDTO;
 import com.example.Model.User;
+import com.example.Model.DTOs.BooksDestinationDTO;
 
 import java.util.List;
 
@@ -17,4 +19,6 @@ public interface IUserService {
     UserDTO oneDTO(Long userID);
 
     void deleteUser(Long userID);
+
+    List<BooksDestinationDTO> getPrivateList(Long UserID);
 }
