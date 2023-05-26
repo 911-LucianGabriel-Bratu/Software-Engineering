@@ -1,0 +1,22 @@
+<h2>Add a destination</h2>
+<form (submit)="addDestination()">
+    <label for="geolocation">Geolocation</label>
+    <input id = "geolocation" name = "geolocation" [(ngModel)]="geolocation">
+    <br><br>
+    <label for="title">Title</label>
+    <input id = "title" name = "title" [(ngModel)]="title">
+    <br><br>
+    <label for="image">Image URL</label>
+    <input id = "image" name = "image" [(ngModel)]="image">
+    <br><br>
+    <label for="description">Description</label>
+    <input id = "description" name = "description" [(ngModel)]="description">
+    <br><br>
+    <label for="fromDate">Start date</label>
+    <input type="date" id = "fromDate" name = "fromDate" [(ngModel)]="fromDate">
+    <br><br>
+    <label for="toDate">End date</label>
+    <input type="date" id = "toDate" name = "toDate" [(ngModel)]="toDate">
+    <br><br>
+    <button type="submit">Submit</button>
+</form>

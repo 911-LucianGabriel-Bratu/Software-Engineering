@@ -1,0 +1,10 @@
+<h2>Input Dates</h2>
+<form (submit)="addDestination()">
+    <label for="fromDate">Start date</label>
+    <input type="date" id = "fromDate" name = "fromDate" [(ngModel)]="fromDate">
+    <br><br>
+    <label for="toDate">End date</label>
+    <input type="date" id = "toDate" name = "toDate" [(ngModel)]="toDate">
+    <br><br>
+    <button type="submit">Submit</button>
+</form>

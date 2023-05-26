@@ -43,4 +43,10 @@ public class DestinationController {
     public void deleteDestination(@PathVariable("destinationID") Long destinationID){
         this.destinationService.deleteDestination(destinationID);
     }
+    @GetMapping("/destinations/maxID")
+    public Long maxId()
+    {
+        System.out.println(destinationService.getMaxId());
+        return destinationService.getMaxId();
+    }
 }

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DestinationDTO } from 'src/app/features/Models/destination';
 import { DestinationService } from 'src/service/destination.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-onedestination',
@@ -13,7 +14,7 @@ export class OnedestinationComponent implements OnInit{
   destinationID?: number;
   imageURL?: string;
 
-  constructor(private destinationSvc: DestinationService, private router:Router, private activatedRoute: ActivatedRoute){}
+  constructor(private destinationSvc: DestinationService, private router:Router, private activatedRoute: ActivatedRoute,private location: Location){}
 
   ngOnInit(): void {
       this.activatedRoute.params.subscribe(params => {
@@ -26,6 +27,6 @@ export class OnedestinationComponent implements OnInit{
   }
 
   goBack(){
-    this.router.navigateByUrl(`admin`);
+    this.location.back();
   }
 }

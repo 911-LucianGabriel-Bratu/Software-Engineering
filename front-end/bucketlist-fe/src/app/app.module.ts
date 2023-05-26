@@ -10,6 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { OnedestinationComponent } from './features/admin/getOneDestination/onedestination/onedestination.component';
 import { AddDestinationComponent } from './features/admin/addDestination/add-destination/add-destination.component';
+import { CreateComponent } from './features/users/create/create.component';
+import { ModifyAccountComponent } from './features/users/modify-account/modify-account.component';
+import { DeleteAccountComponent } from './features/users/delete-account/delete-account.component';
+import { AddAlreadyExistingComponent } from './features/users/add-already-existing/add-already-existing.component';
+import { DeleteDestinationPrivateComponent } from './features/users/delete-destination-private/delete-destination-private.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { AddDestinationComponent } from './features/admin/addDestination/add-des
     AdminComponent,
     UserComponent,
     OnedestinationComponent,
-    AddDestinationComponent
+    AddDestinationComponent,
+    CreateComponent,
+    ModifyAccountComponent,
+    DeleteAccountComponent,
+    AddAlreadyExistingComponent,
+    DeleteDestinationPrivateComponent
   ],
   imports: [
     BrowserModule,

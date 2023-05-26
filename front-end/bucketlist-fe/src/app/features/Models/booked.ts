@@ -1,5 +1,7 @@
+import { DatePipe } from "@angular/common";
+
 export interface BookedDTO {
-    bookID: number;
-    fromDate: Date;
-    toDate: Date;
+    bookID?: number;
+    fromDate?: DatePipe;
+    toDate?: DatePipe;
 }

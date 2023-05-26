@@ -85,4 +85,8 @@ public class BooksDestinationService implements IBooksDestinationService{
     public void deleteBooksDestination(Long booksDestinationID) {
         this.booksDestinationRepo.deleteById(booksDestinationID);
     }
+    public Long getBookedIdFromUserAndDestination(Long destId,Long uid)
+    {
+        return booksDestinationRepo.getBookedIdFromUserAndDestination(destId,uid);
+    }
 }

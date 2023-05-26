@@ -44,9 +44,15 @@ public class UserController {
 
     @DeleteMapping("/users/{userID}")
     public void deleteUser(@PathVariable("userID") Long userID){
+        System.out.println(userID);
         this.userService.deleteUser(userID);
     }
 
     @GetMapping("/users/{userID}/privateList")
     public List<BooksDestinationDTO> getPrivateList(@PathVariable("userID") Long userID) {return this.userService.getPrivateList(userID);}
+    @PutMapping("/users/updatePass/{userID}")
+    public User changePass(@PathVariable Long userID,@RequestBody String newPass)
+    {
+        return userService.changePass(userID,newPass);
+    }
 }

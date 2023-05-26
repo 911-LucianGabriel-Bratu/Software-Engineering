@@ -1,1 +1,38 @@
-<p>user works!</p>
+<button (click)="goToCreate()">Create destination</button><button (click)="goToModify()">Modify account</button><button (click)="goToDeleteAccount()">Delete account</button><button (click)="logout()">Log out</button>
+<h3>Public destination list</h3>
+<table>
+    <thead>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Geolocation</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let destination of destinations; let i = index">
+        <td><a a (click)="goToGetOne(destination.destinationID)">{{i}}</a></td>
+        <td>{{destination.title}}</td>
+        <td>{{destination.description}}</td>
+        <td>{{destination.geolocation}}</td>
+        <td><button (click)="addToPrivate(destination.destinationID)">Add</button></td>
+    </tbody>
+</table>
+
+
+<h3>Bucket list</h3>
+<table>
+    <thead>
+        <th>#</th>
+        <th>Title</th>
+        <th>Start Date</th>
+        <th>End date</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let destination of destinationsPrivate; let i = index">
+        <td><a a (click)="goToGetOne(destination.destinationID)">{{i}}</a></td>
+        <td>{{destination.title}}</td>
+        <td>{{destination.fromDate}}</td>
+        <td>{{destination.toDate}}</td>
+        <td><button (click)="goToDeleteDestination(destination.destinationID)">Delete</button></td>
+    </tbody>
+</table>

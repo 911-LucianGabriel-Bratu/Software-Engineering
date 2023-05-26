@@ -25,9 +25,13 @@ checkCredentials(){
   if(this.password && this.username){
     for(const user of this.users!){
       if(user.username === this.username && user.password === this.password && user.admin){
+        console.log(user.userID);
+        sessionStorage.setItem("userId",user.userID.toString());
         this.router.navigateByUrl('admin')
       }
       else if(user.username === this.username && user.password === this.password && !user.admin){
+        console.log(user.userID);
+        sessionStorage.setItem("userId",user.userID.toString());
         this.router.navigateByUrl('user')
       }
       else{

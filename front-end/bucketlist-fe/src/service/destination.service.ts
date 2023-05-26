@@ -24,4 +24,7 @@ export class DestinationService {
   addDestination(destination: DestinationNoIDDTO): Observable<DestinationDTO> {
     return this.http.post(`${this.baseUrl}destinations`, destination) as Observable<DestinationDTO>;
   }
+  getMaxId(): Observable<number> {
+    return this.http.get(`${this.baseUrl}destinations/maxID`) as Observable<number>;
+  }
 }

@@ -4,6 +4,9 @@ import com.example.Model.DTOs.DestinationDTO;
 import com.example.Model.Destination;
 import com.example.Repository.DestinationRepo;
 import com.example.Repository.UserRepo;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +17,8 @@ import java.util.List;
 public class DestinationService implements IDestinationService{
     @Autowired
     private DestinationRepo destinationRepo;
+    @PersistenceContext
+    EntityManager entityManager;
 
     @Override
     public Destination saveDestinationToPublicList(Destination destination) {
@@ -64,5 +69,11 @@ public class DestinationService implements IDestinationService{
     @Override
     public void deleteDestination(Long destinationID) {
         this.destinationRepo.deleteById(destinationID);
+    }
+
+
+    public Long getMaxId()
+    {
+        return destinationRepo.getMaxId();
     }
 }

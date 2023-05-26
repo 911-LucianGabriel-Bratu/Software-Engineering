@@ -89,4 +89,10 @@ public class UserService implements IUserService{
 
         return privateListDTO;
     }
+    public User changePass(Long userID,String newPass)
+    {
+        User u=userRepo.findById(userID).get();
+        u.setPassword(newPass);
+        return userRepo.save(u);
+    }
 }
