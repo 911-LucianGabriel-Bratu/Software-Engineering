@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let destination of destinations; let i = index">
-        <td><a a (click)="goToGetOne(destination.destinationID)">{{i}}</a></td>
+        <td><a id="{{i}}" (click)="goToGetOne(destination.destinationID)">{{i}}</a></td>
         <td>{{destination.title}}</td>
         <td>{{destination.description}}</td>
         <td>{{destination.geolocation}}</td>

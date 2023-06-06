@@ -23,7 +23,10 @@ export class DeleteDestinationPrivateComponent implements OnInit{
   }
   deleteOne()
   {
-    this.bdSvc.deleteFromPrivate(this.bid).subscribe();
-    this.router.navigateByUrl("/user");
+    this.bdSvc.deleteFromPrivate(this.bid).subscribe();setTimeout(() => {
+      this.router.navigateByUrl("/user");
+    },100);
   }
-}
+
+  }
+

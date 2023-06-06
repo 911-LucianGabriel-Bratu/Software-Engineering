@@ -28,6 +28,10 @@ export class AddAlreadyExistingComponent implements OnInit{
     this.dest.toDate=this.toDate;
     const uid=sessionStorage.getItem("userId");
     this.bdSvc.addToPrivate(this.dest,Number(uid),this.did).subscribe();
-    this.router.navigateByUrl("/user");
+    setTimeout(() => {
+      this.router.navigateByUrl("/user");
+    }, 100); 
   }
-}
+    
+  }
+
